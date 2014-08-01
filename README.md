@@ -22,4 +22,4 @@ With all of the aforementioned dependencies installed, you're now ready to build
 
 ###Reviewer
 * Wrote the Gruntfile.js from scratch rather than using Yeoman
-* Wrote mixins utilizing sass rather than relying on Bourbon or Compass.
+* Wrote own mixins rather than relying on Bourbon or Compass.
