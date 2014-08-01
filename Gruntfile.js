@@ -18,7 +18,14 @@ module.exports = function(grunt) {
 				src: '**',
 				dest: 'build/assets/img',
 				filter: 'isFile'
-			}
+			},
+			libraries: {
+				expand: true,
+				cwd: 'src/assets/js/libraries',
+				src: '**',
+				dest: 'build/assets/js',
+				filter: 'isFile'
+			},
 		},
 		jshint: {
 			options: {
@@ -30,7 +37,7 @@ module.exports = function(grunt) {
 			all: [
 				'Gruntfile.js',
 				'src/assets/js/*.js',
-				'src/assets/js/**/*.js'
+				'src/assets/js/modules/*.js'
 			]
 		},
 		sass: {
