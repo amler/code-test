@@ -20,7 +20,6 @@ With all of the aforementioned dependencies installed, you're now ready to build
 * `grunt build` Creates a **build** directory, containing a fresh build of the project's files.
 * `grunt watch` Watches when HTML, JavaScript or SCSS files are changed and updates HTML, JavaScript and CSS files within **build** directory. Press **Control + C** to stop watching files.
 
-
 ##Reviewer Notes
 * I wrote my own Grunt build process from scratch rather than relying on a scaffolding tool like Yeoman in order to demonstrate my understanding of Grunt.
 * I wrote my own SASS mixins rather than including a mixin library like Bourbon or Compass in order to demonstrate a better understanding of SASS.
