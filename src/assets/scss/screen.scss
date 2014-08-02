@@ -42,7 +42,6 @@ h2 {
 }
 
 h3 {
-	float: left;
 	font-size: 28px;
 	font-weight: 200;
 	margin: 0;
@@ -59,9 +58,25 @@ p {
 	margin: 37px 0 0 0;
 }
 
+.button {
+	background-color: $purple;
+	border: none;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+	margin: 0;
+	padding: 10px;
+	@include transition(background-color, 0.2s, linear);
+
+	&:hover {
+		background-color: #490245;
+	}
+}
+
 /////////////////////////////////
 // Header
 /////////////////////////////////
+
 header {
 	background-color: #999;
 	overflow: hidden;
@@ -73,8 +88,8 @@ header {
 
 		ul {
 			float: left;
-			list-style-type: none;
 			height: 45px;
+			list-style-type: none;
 			margin: 0;
 			padding: 0;
 			
@@ -100,9 +115,11 @@ header {
 		}
 	}
 }
+
 /////////////////////////////////
 // Left Column
 /////////////////////////////////
+
 .grid-container {
 	max-width: 930px;
 }
@@ -127,11 +144,12 @@ header {
 }
 
 blockquote {
-	@include retina-background-image('iphone', 104px, 177px);
 	background-color: #bbd8c4;
 	margin: 0;
 	overflow: visible;
 	padding: 14px;
+	@include retina-background-image('iphone', 104px, 177px);
+
 		h4 {
 			color: $purple;
 			margin: 0 0 10px 0;
@@ -141,29 +159,29 @@ blockquote {
 .rates {
 	h3 {
 		border-right: 1px solid #333;
+		float: left;
 		margin: 49px 0 30px 0;
 		padding: 12px 10px 12px 0;
 	}
-	span {
+	p.intro {
 		display: inline-block;
 		font-size: 28px;
 		margin: 61px 0 0 15px;
 	}
 
 	table {	
-		border-collapse:collapse; 
+		border-collapse: collapse; 
+		border-spacing: 0;
 		width: 100%;
 		th {
-			clear: left;
-			float: right;
 			font-size: 12px;
 			font-weight: 100;
 			margin: 0 0 4px 116px;
 		}
 		tr {
 			background-color: #eef5f0;
-			width: 33.33%;
 			padding: 15px;
+			width: 33.33%;
 		}
 		tr:nth-child(even){
 			background-color: #ddebe1;
@@ -174,44 +192,30 @@ blockquote {
 /////////////////////////////////
 // Right Column
 /////////////////////////////////
-.button {
-	background-color: $purple;
-	border: none;
-	color: #fff;
-	padding: 3em;
-	width: 100%;
-	@include transition(background-color, 0.2s, linear);
-
-	&:hover {
-		background-color: #490245;
-	}
-}
 
 .side-bar {
 	ul.tabs {
-		list-style: none;
 		float: left;
+		list-style: none;
 		padding: 0;
-		.left-tab {
 
-			border-top: #ccc;
+		.left-tab {
 			border-right: #ccc;
-			position: relative;
+			border-top: #ccc;
 			height: 44px;
+			position: relative;
 			width: 77px;
 		}
 		li {
 			display: inline;
 			
 			a {
-				color: blue; 
-				float: left; 
-				display: block; 
-				padding: 4px 10px; 
-				
-				position: relative;
-				
 				background: #999;
+				color: blue; 
+				display: block; 
+				float: left; 
+				padding: 4px 10px; 				
+				position: relative;
 				text-decoration: none;
 
 				&:hover {
@@ -225,57 +229,95 @@ blockquote {
 /////////////////////////////////
 // Modal
 /////////////////////////////////
+
 .modal-wrap {
-    background-color: rgba(0, 0, 0, 0.50);
-    display: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
+	background-color: rgba(0, 0, 0, 0.50);
+	bottom: 0;
+	display: none;
+	left: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
 }
 
-#modal {
-    background-color: #fff;
-    box-shadow: 0px 0px 8.5px 1.5px rgba(0, 0, 0, 0.65);	
-    display: none;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 30px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 140px;
-    max-width: 30%;
-    // @media only screen and (max-width : 1080px) {
-    //     width: 70%;
-    // }
-    // @media only screen and (max-width : 600px) {
-    //     width: 90%;
-    // }
-    h3 {
-    	margin: 0 0 45px 0;
-    }
-    // .fa-times {
-    //     color: $blue;
-    //     cursor: pointer;
-    //     position: absolute;
-        
-    // }
-    .button {
-    	max-width: 140px;
+	#modal {
+		background-color: #fff;
+		box-shadow: 0px 0px 8.5px 1.5px rgba(0, 0, 0, 0.65);	
+		display: none;
+		left: 0;
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 448px;
+		padding: 30px;
+		position: fixed;
+		right: 0;
+		top: 140px;
+		@media only screen and (max-width : 500px) {
+			
+			top: 50px;
+		}
+		// @media only screen and (max-width : 600px) {
+	//     width: 90%;
+	// }
+	i {
+		cursor: pointer;
+		height: 15px;
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		width: 16px;
+		@include retina-background-image('times', 16px, 15px);
+	}
 
-    }
+	h3 {
+		margin: 0 0 45px 0;
+		@media only screen and (max-width: 500px) {
+			margin: 0 0 20px 0;
+			line-height: 1.2;
+		}
+	}
+
+	.button {
+		float: right;
+		width: 140px;
+		@media only screen and (max-width: 700px) {
+			width: 100%;
+		}
+	}
+
+	label {
+		font-size: 14px;
+		font-weight: bold;
+		margin: 0 20px 0 0;
+		@media only screen and (max-width: 540px) {
+			display: block;
+		}
+	}
 
 	input {
 		border: 1px solid $blue;
+		border-radius: 0;
+		font: 200 1.4em 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
 		height: 35px;
-		width: 448px;
+		margin: 0 0 20px 0;
+		padding: 2%;
+		width: 78.5%;
+		-webkit-appearance: none;
+		@include box-sizing(border-box);
+
+		@media only screen and (max-width: 540px) {
+			width: 100%;
+		}
 		&:focus { 
 			outline: none;
 			box-shadow: 0 0 2px $blue;
 		}
+		&:-webkit-autofill {
+			-webkit-box-shadow: 0 0 0px 1000px white inset;
+		}
+		&.error {
+			background-color: #E6CFC3;
+			border-color: red;
+		}
 	}
-
 }
-

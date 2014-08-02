@@ -23,7 +23,7 @@ var tableMaker = {
 			var totalString = '<tr><td class="bank">'+ bank.name + '</td>';
 			totalString += '<td class="ap">' + bank.apy + '%</td>';
 			totalString += '<td>' + bank.earnings + '</td></tr>';
-			$('.target').append(totalString);
+			$('tbody').append(totalString);
 		});
 	}
 };
@@ -43,20 +43,33 @@ $.ajax({
 });
 
 
+$('.button').click(function() {
 	$('.modal-wrap, #modal').show();
-// $('.button').click(function() {
-// });
+});
 
-$('.fa-times, .modal-wrap').click(function() {
+$('#modal i, .modal-wrap').click(function() {
 	$('.modal-wrap, #modal').hide();
 });
 
-$('#login').click(function() {
-	var user = $('#username').val();
+$('#modal form').submit(function(event) {
+	event.preventDefault();
+	var username = $('#username').val();
 	var password = $('#password').val();
-	if (user === '' || password === '') {
-		console.log('Enter stuff');
+	
+	$('#username').removeClass('error');
+	$('#password').removeClass('error');
+
+	if (!username || !password) {
+		if (!username) {
+			$('#username').addClass('error');
+		} else if (!password) {
+			$('#password').addClass('error');
+		}
+		alert('Please enter a valid value');
+	} else if (username === 'heather' && password === 'rocks') {
+		alert('You have been successfully logged in.');
+		$('.modal-wrap, #modal').hide();
+	} else {
+		alert('Invalid username/password.');
 	}
-	console.log(user, password);
-	$('.modal-wrap, #modal').hide();
 });

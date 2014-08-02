@@ -19,7 +19,7 @@
 				<ul>
 					<li><a href="#">Home</a></li>
 					<li><a href="#">Employee</a></li>
-					<li><a href="#">Company</a></li>
+					<li class="active"><a href="#">Company</a></li>
 					<li><a href="#">Services</a></li>
 					<li><a href="#">Contact</a></li>		
 				</ul>
@@ -50,14 +50,16 @@
 				</blockquote>
 				<section class="rates">
 					<h3>Rates</h3>
-					<span>Check them out.</span>
+					<p class="intro">Check them out.</p>
 					<table>
-						<!-- <tr class="rate-info"> -->
-							
-							<th scope="col">Annual Percentage Yield</th>
-							<th scope="col">Est. Earnings for 1 Year*</th>
-						<!-- </tr> -->
-						<tbody class="target">
+						<thead>
+							<tr class="rate-info">
+								<th></th>
+								<th>Annual Percentage Yield</th>
+								<th>Est. Earnings for 1 Year*</th>
+							</tr>
+						</thead>
+						<tbody>
 							<tr>
 								<td class="bank">Dues</td>
 								<td class="ap">APY</td>
@@ -65,7 +67,7 @@
 							</tr>
 						</tbody>
 					</table>
-
+					<p>*Based on $50,000 deposit.</p>
 				</section>
 			</div>
 
@@ -105,13 +107,15 @@
 	</main>
     <div class="modal-wrap"></div>
     <div id="modal">
-        <i class="fa fa-times fa-2x"></i>
-		<h3>Sign In To Your Account</h3>
-		<label for="username">Username</label>
-		<input type="text" id="username"/>
-		<label for="password">Password</label>
-		<input type="text" id="password"/>
-		<button id="login" class="button">Login</button>
+    	<form>
+			<i></i>
+			<h3>Sign In To Your Account</h3>
+			<label for="username">Username</label>
+			<input type="text" id="username"/>
+			<label for="password">Password</label>
+			<input type="password" id="password"/>
+			<button id="login" class="button">Login</button>
+		</form>
     </div>
 	<footer>
 			<div class="grid-container">
@@ -120,7 +124,7 @@
 					<ul>
 						<li><a href="#">Home</a></li>
 						<li><a href="#">Employee</a></li>
-						<li><a href="#">Company</a></li>
+						<li class="active"><a href="#">Company</a></li>
 						<li><a href="#">Services</a></li>
 						<li><a href="#">Contact</a></li>		
 					</ul>

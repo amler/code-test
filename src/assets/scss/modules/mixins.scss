@@ -27,6 +27,14 @@
 	        transition: $property $duration $timing;
 }
 
+
+@mixin box-sizing($value) {
+	-webkit-box-sizing: $value;
+	   -moz-box-sizing: $value;
+	     -o-box-sizing: $value;
+	        box-sizing: $value;
+}
+
 //Create a button mixin
 // @mixin button() {
 

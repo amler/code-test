@@ -24,3 +24,4 @@ With all of the aforementioned dependencies installed, you're now ready to build
 * I wrote my own Grunt build process from scratch rather than relying on a scaffolding tool like Yeoman in order to demonstrate my understanding of Grunt.
 * I wrote my own SASS mixins rather than including a mixin library like Bourbon or Compass in order to demonstrate a better understanding of SASS.
 * Since the provided design was based on a 960 grid, I elected to use [Unsemantic](http://unsemantic.com/) (a fluid grid system that is the successor to the [960 Grid System](http://960.gs/)).
+* For a successful login, the username is 'heather' and the password is 'rocks'.
