@@ -149,16 +149,17 @@ blockquote {
 		font-size: 28px;
 		margin: 61px 0 0 15px;
 	}
-	p {
-		clear: left;
-		float: right;
-		font-size: 12px;
-		font-weight: 100;
-		margin: 0 0 4px 116px;
-	}
+
 	table {	
 		border-collapse:collapse; 
 		width: 100%;
+		th {
+			clear: left;
+			float: right;
+			font-size: 12px;
+			font-weight: 100;
+			margin: 0 0 4px 116px;
+		}
 		tr {
 			background-color: #eef5f0;
 			width: 33.33%;
