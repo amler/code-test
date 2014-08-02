@@ -1,21 +1,48 @@
 
 var url = 'http://community.ally.com/svc/api/';
- 
+var dataArray = [];
 $.ajax({
 	type: "GET",
 	url: url,
 	contentType: "application/json; charset=utf-8",
 	dataType: "jsonp",
 	success: function (data, textStatus, jqXHR) {
-		console.log(data.records);
+		dataArray = data.records;
+		console.log('ajax ', dataArray);
+		// sortApy(dataArray);
 	},
 	error: function (errorMessage) {
 		console.log(errorMessage);
 	}
 });
 
-function renderInfo(data) {
-	for (var i = 0; i < data.length; i ++) {
-		
-	}
+function renderInfo(record) {
+	record.forEach(function(record){
+		var totalString = '<tr><td class="bank">'+ record.name + '</td>';
+		totalString += '<td class="ap">' + record.apy + '</td>';
+		totalString += '<td>' + record.earnings + '</td></tr>';
+		$('tbody').append(totalString);
+	});
 }
+
+function sortApy(array) {
+
+	dataArray.sort(function(a, b){
+		var apyA = a.apy,
+			apyB = b.apy;
+		
+		if (apyA < apyB) {
+			return -1;
+		} else if (apyA > apyB) {
+			return 1;
+		}
+		return 0;
+	});
+	console.log('sort ', dataArray);
+
+}
+// this.sort(function(a, b) {
+        
+//     });
+// fruits.sort();
+
