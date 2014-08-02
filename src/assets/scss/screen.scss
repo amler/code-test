@@ -4,7 +4,7 @@
 @import 'modules/unsemantic-grid-responsive';
 
 body {
-	background: #e7e8e9;
+	background: $lightgrey;
 	color: $grey;
 	font: 400 14px/1.3em 'Helvetica Neue', Helvetica, Arial, Sans-Serif;
 	margin: 0;
@@ -51,7 +51,12 @@ h4 {
 	font-weight: bold;
 	padding: 0;
 }
-
+h5 {
+	color: $blue;
+	font-size: 16px;
+	font-weight: 200;
+	padding: 0;
+}
 p {
 	margin: 37px 0 0 0;
 }
@@ -76,7 +81,7 @@ p {
 /////////////////////////////////
 
 header {
-	background-color: #999;
+	background-color: $blue;
 	overflow: hidden;
 
 	nav {
@@ -85,8 +90,6 @@ header {
 		text-transform: lowercase;
 
 		ul {
-			float: left;
-			height: 45px;
 			list-style-type: none;
 			margin: 0;
 			padding: 0;
@@ -95,6 +98,7 @@ header {
 				float: left;
 				height: 45px;
 				position: relative;
+				@include transition(background-color, 0.2s, linear);
 
 				a {
 					color: #fff;
@@ -102,12 +106,19 @@ header {
 					margin: 0;
 					padding: 14px;
 					text-decoration: none;
+					@include transition(color, 0.2s, linear);
 
 					&:hover {
-						background-color: #333;
 						color: #fff;
-						font-weight: 600;
 					}
+				}
+
+				&:hover {
+					background-color: darken($blue, 5%);
+				}
+				&.active {
+					background-color: $darkblue;
+					font-weight: 900;
 				}
 			}
 		}
@@ -222,4 +233,47 @@ blockquote {
 			}
 		}
 	}
+}
+
+/////////////////////////////////
+// Footer
+/////////////////////////////////
+footer {
+	font-size: 16px;
+	height: 100px;
+	h5 {
+		float: left;
+		margin: 20px 0;
+		padding: 0;
+	}
+	nav {
+		float: right;
+		text-transform: lowercase;
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			
+			li {
+				float: left;
+				padding: 20px 0 0 20px;
+				
+				a {
+					color: $blue;
+					text-decoration: none;
+					@include transition(color, 0.2s, linear);
+
+					&:hover {
+						color: $darkblue;
+					}
+				}
+
+				&.active {
+					font-weight: 900;
+				}
+			}
+		}
+	}
+
 }

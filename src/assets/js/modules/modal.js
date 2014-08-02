@@ -1,9 +1,9 @@
 $('.button').click(function() {
-	$('.modal-wrap, #modal').show();
+	$('#modal').show();
 });
 
 $('#modal i, .modal-wrap').click(function() {
-	$('.modal-wrap, #modal').hide();
+	$('#modal').hide();
 });
 
 $('#modal form').submit(function(event) {
@@ -23,7 +23,9 @@ $('#modal form').submit(function(event) {
 		alert('Please enter a valid value');
 	} else if (username === 'heather' && password === 'rocks') {
 		alert('You have been successfully logged in.');
-		$('.modal-wrap, #modal').hide();
+		$('#modal').hide();
+		username = $('#username').val('');
+		password = $('#password').val('');
 	} else {
 		alert('Invalid username/password.');
 	}

@@ -35,8 +35,8 @@
 	        box-sizing: $value;
 }
 
-//Create a button mixin
-// @mixin button() {
-
-// }
-
+@mixin transform($value) {
+	-webkit-transform: $value;
+		-ms-transform: $value;
+			transform: $value;
+}
