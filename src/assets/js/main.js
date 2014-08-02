@@ -41,3 +41,22 @@ $.ajax({
 		console.log(errorMessage);
 	}
 });
+
+
+	$('.modal-wrap, #modal').show();
+// $('.button').click(function() {
+// });
+
+$('.fa-times, .modal-wrap').click(function() {
+	$('.modal-wrap, #modal').hide();
+});
+
+$('#login').click(function() {
+	var user = $('#username').val();
+	var password = $('#password').val();
+	if (user === '' || password === '') {
+		console.log('Enter stuff');
+	}
+	console.log(user, password);
+	$('.modal-wrap, #modal').hide();
+});

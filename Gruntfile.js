@@ -54,7 +54,7 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'build/assets/js/main.js': [
-						'src/assets/js/main.js'
+						'src/assets/js/main.js',
 					]
 				}
 			}
