@@ -20,8 +20,8 @@ var tableMaker = {
 	},
 	renderTableRow: function() {
 		this.dataArray.forEach(function(bank){
-			var totalString = '<tr><td class="bank">'+ bank.name + '</td>';
-			totalString += '<td class="ap">' + bank.apy + '%</td>';
+			var totalString = '<tr><td>'+ bank.name + '</td>';
+			totalString += '<td>' + bank.apy + '%</td>';
 			totalString += '<td>' + bank.earnings + '</td></tr>';
 			$('tbody').append(totalString);
 		});
