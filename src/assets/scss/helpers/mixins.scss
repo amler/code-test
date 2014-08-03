@@ -1,0 +1,42 @@
+@mixin background-size($value) {
+	-webkit-background-size: $value;
+	   -moz-background-size: $value;
+	     -o-background-size: $value;
+	        background-size: $value;
+}
+
+@mixin hide-text {
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+}
+
+// http://css-tricks.com/snippets/css/retina-display-media-query/
+@mixin retina-background-image($src, $width, $height) {
+	background: transparent url('../img/#{$src}.png') center center no-repeat;
+	@include background-size($width $height);
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+		background-image: url('../img/#{$src}@2x.png');
+	}
+}
+
+@mixin transition($property, $duration, $timing) {
+	-webkit-transition: $property $duration $timing;
+	   -moz-transition: $property $duration $timing;
+	     -o-transition: $property $duration $timing;
+	        transition: $property $duration $timing;
+}
+
+
+@mixin box-sizing($value) {
+	-webkit-box-sizing: $value;
+	   -moz-box-sizing: $value;
+	     -o-box-sizing: $value;
+	        box-sizing: $value;
+}
+
+@mixin transform($value) {
+	-webkit-transform: $value;
+		-ms-transform: $value;
+			transform: $value;
+}

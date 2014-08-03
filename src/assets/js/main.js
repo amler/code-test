@@ -44,5 +44,5 @@ $.ajax({
 
 
 
-$('.side-bar').tabMenu();
+$('.tab-menu').tabMenu();
 

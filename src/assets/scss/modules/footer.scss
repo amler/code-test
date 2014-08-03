@@ -1,0 +1,62 @@
+footer {
+	font-size: 16px;
+	height: 100px;
+
+	@media only screen and (max-width: 540px) {
+		margin: 20px auto 10px;
+		font-size: 12px;
+	}
+
+	h5 {
+		float: left;
+		margin: 20px 0;
+		padding: 0;
+
+		@media only screen and (max-width: 540px) {
+			float: none;
+			margin: 20px auto 10px;
+			text-align: center;
+		}
+	}
+
+	nav {
+		float: right;
+		text-transform: lowercase;
+
+		@media only screen and (max-width: 540px) {
+			float: none;
+			margin: 0 auto;
+			display: table;
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+			li {
+				float: left;
+				padding: 20px 0 0 20px;
+
+				@media only screen and (max-width: 540px) {
+					padding: 5px;
+					text-align: center;
+				}
+				
+				a {
+					color: $blue;
+					text-decoration: none;
+					@include transition(color, 0.2s, linear);
+
+					&:hover {
+						color: $darkblue;
+					}
+				}
+
+				&.active {
+					font-weight: 900;
+				}
+			}
+		}
+	}
+}

@@ -1,5 +1,9 @@
-@import 'modules/variables';
-@import 'modules/mixins';
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'modules/tab-menu';
+@import 'modules/header';
+@import 'modules/table';
+@import 'modules/footer';
 @import 'modules/modal';
 @import 'modules/unsemantic-grid-responsive';
 
@@ -77,67 +81,9 @@ p {
 }
 
 /////////////////////////////////
-// Header
+// Body
 /////////////////////////////////
 
-header {
-	background-color: $blue;
-	overflow: hidden;
-
-	nav {
-		float: right;
-		font-size: 16px;
-		text-transform: lowercase;
-
-		@media only screen and (max-width: 630px) {
-			clear: left;
-			float: none;
-		}
-
-		ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-			
-			li {
-				float: left;
-				height: 45px;
-				position: relative;
-				@include transition(background-color, 0.2s, linear);
-
-				@media only screen and (max-width: 540px) {
-					float: none;
-					margin: 0 auto;
-				}
-
-				a {
-					color: #fff;
-					display: block;
-					margin: 0;
-					padding: 14px;
-					text-decoration: none;
-					@include transition(color, 0.2s, linear);
-
-					&:hover {
-						color: #fff;
-					}
-				}
-
-				&:hover {
-					background-color: darken($blue, 5%);
-				}
-				&.active {
-					background-color: $darkblue;
-					font-weight: 900;
-				}
-			}
-		}
-	}
-}
-
-/////////////////////////////////
-// Left Column
-/////////////////////////////////
 
 .grid-container {
 	max-width: 930px;
@@ -202,236 +148,11 @@ blockquote {
 	}
 }
 
-/////////////////////////////////
-// Table
-/////////////////////////////////
-
-.rates {
-	h3 {
-		border-right: 1px solid #333;
-		float: left;
-		margin: 49px 0 30px 0;
-		padding: 12px 10px 12px 0;
-	}
-	p.intro {
-		display: inline-block;
-		font-size: 28px;
-		margin: 61px 0 0 15px;
-	}
-
-	@media only screen and (max-width: 540px) {
-		h3,
-		p.intro {
-			font-size: 24px;
-		}
-	}
-
-	table {	
-		border-collapse: collapse; 
-		border-spacing: 0;
-		font-size: 16px;
-		width: 100%;
-		
-		th {
-			background-color: #fff;
-			font-size: 12px;
-			font-weight: 100;
-			text-align: right;
-
-			@media only screen and (max-width: 400px) {
-				font-size: 0.4em;
-				font-weight: 300;
-				line-height: 1.4;
-				width: 50%;
-			}
-		}
-
-		tr {
-			background-color: #eef5f0;
-		}
-		tr:nth-child(even){
-			background-color: #ddebe1;
-		}
-		tr:first-child {
-			font-size: 18px;
-			font-weight: 900;
-		}
-		td {
-			padding: 1rem;
-			text-align: right;
-			width: 33.33%;
-		}
-		td:first-child {
-			text-align: left;
-		}
-	}
-}
-
-/////////////////////////////////
-// Right Column
-/////////////////////////////////
 
 .grid-25 > button {
 	margin: 0 0 25px 0;
 	width: 100%;
 	@media only screen and (max-width: 930px) {
 		margin-top: 20px; 
-	}
-}
-
-.side-bar {
-
-	ul.tabs {
-		display: block;
-		list-style: none;
-		margin: 0;
-		overflow: hidden;
-		padding: 0;
-
-		li {
-			background: #ddebe1;
-			border-left: 1px solid #ccc;
-			border-right: 1px solid #ccc;
-			border-top: 1px solid #ccc;
-			display: inline-block;
-			float: left;
-			margin: 8px 0 0 0;
-
-			@include transition(background-color, 0.2s, linear);
-
-			&:first-child {
-				border-left: 0;
-				border-right: 0;
-				&.active {
-					border-right: 1px solid #ccc;
-				}
-				a {
-					border-left: 0;
-				}
-			}
-			&:last-child {
-				border-left: 0;
-				&.active {
-					border-left: 1px solid #ccc;
-				}
-			}
-			
-			a {
-				color: $blue;
-				cursor: pointer;
-				display: block;
-				font-size: 18px;
-				padding: 6px 16px;
-				text-decoration: none;
-			}
-
-			&:hover {
-				background-color: darken(#ddebe1, 5%);
-			}
-
-			&.active {
-				background: #f5f5f5;
-				margin: 0 0 0 0;
-
-				a {
-					border-left: 1px solid #fff;
-					border-right: 1px solid #fff;
-					border-top: 1px solid #fff;
-					color: #505050;
-					padding: 15px 16px 6px;
-				}
-			}
-			
-		}
-	}
-
-	.tab-content {
-		background-color: #f5f5f5;
-		border-top: 1px solid #ccc;
-		margin-top: -2px;
-		div {
-			display: none;
-			padding: 15px;
-			border-top: 1px solid #fff;
-			&:first-child {
-				display: block;
-			}
-			h4 {
-				color: $blue;
-				margin: 15px 0 0 0;
-			}
-
-			p {
-				font-size: 14px;
-				margin: 10px 0 25px;
-			}
-		}
-
-	}
-}
-
-/////////////////////////////////
-// Footer
-/////////////////////////////////
-footer {
-	font-size: 16px;
-	height: 100px;
-
-	@media only screen and (max-width: 540px) {
-		margin: 20px auto 10px;
-		font-size: 12px;
-	}
-
-	h5 {
-		float: left;
-		margin: 20px 0;
-		padding: 0;
-
-		@media only screen and (max-width: 540px) {
-			float: none;
-			margin: 20px auto 10px;
-			text-align: center;
-		}
-	}
-
-	nav {
-		float: right;
-		text-transform: lowercase;
-
-		@media only screen and (max-width: 540px) {
-			float: none;
-			margin: 0 auto;
-			display: table;
-		}
-
-		ul {
-			list-style-type: none;
-			margin: 0;
-			padding: 0;
-
-			li {
-				float: left;
-				padding: 20px 0 0 20px;
-
-				@media only screen and (max-width: 540px) {
-					padding: 5px;
-					text-align: center;
-				}
-				
-				a {
-					color: $blue;
-					text-decoration: none;
-					@include transition(color, 0.2s, linear);
-
-					&:hover {
-						color: $darkblue;
-					}
-				}
-
-				&.active {
-					font-weight: 900;
-				}
-			}
-		}
 	}
 }

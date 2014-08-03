@@ -1,0 +1,54 @@
+header {
+	background-color: $blue;
+	overflow: hidden;
+
+	nav {
+		float: right;
+		font-size: 16px;
+		text-transform: lowercase;
+
+		@media only screen and (max-width: 630px) {
+			clear: left;
+			float: none;
+		}
+
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			
+			li {
+				float: left;
+				height: 45px;
+				position: relative;
+				@include transition(background-color, 0.2s, linear);
+
+				@media only screen and (max-width: 540px) {
+					float: none;
+					margin: 0 auto;
+				}
+
+				a {
+					color: #fff;
+					display: block;
+					margin: 0;
+					padding: 14px;
+					text-decoration: none;
+					@include transition(color, 0.2s, linear);
+
+					&:hover {
+						color: #fff;
+					}
+				}
+
+				&:hover {
+					background-color: darken($blue, 5%);
+				}
+				&.active {
+					background-color: $darkblue;
+					font-weight: 900;
+				}
+			}
+		}
+	}
+}
