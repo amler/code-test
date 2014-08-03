@@ -20,7 +20,7 @@ $('#modal form').submit(function(event) {
 		} else if (!password) {
 			$('#password').addClass('error');
 		}
-		alert('Please enter a valid value');
+		alert('Please enter a value.');
 	} else if (username === 'heather' && password === 'rocks') {
 		alert('You have been successfully logged in.');
 		$('#modal').hide();

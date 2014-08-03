@@ -274,6 +274,9 @@ blockquote {
 .grid-25 > button {
 	margin: 0 0 25px 0;
 	width: 100%;
+	@media only screen and (max-width: 930px) {
+		margin-top: 20px; 
+	}
 }
 
 .side-bar {
@@ -347,8 +350,12 @@ blockquote {
 		border-top: 1px solid #ccc;
 		margin-top: -2px;
 		div {
+			display: none;
 			padding: 15px;
 			border-top: 1px solid #fff;
+			&:first-child {
+				display: block;
+			}
 			h4 {
 				color: $blue;
 				margin: 15px 0 0 0;
