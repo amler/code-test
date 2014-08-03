@@ -89,6 +89,11 @@ header {
 		font-size: 16px;
 		text-transform: lowercase;
 
+		@media only screen and (max-width: 630px) {
+			float: none;
+			clear: left;
+		}
+
 		ul {
 			list-style-type: none;
 			margin: 0;
@@ -161,11 +166,16 @@ header {
 blockquote {
 	background-color: #bbd8c4;
 	margin: 0;
-	overflow: hidden;
 	padding: 14px;
 	position: relative;
 	.mobile {
 		width: 80%;
+		@media only screen and (max-width: 930px) {
+			width: 70%;
+		}
+		@media only screen and (max-width: 700px) {
+			width: 100%;
+		}
 
 		h4 {
 			color: $purple;
@@ -179,13 +189,23 @@ blockquote {
 	}
 
 	i {
+		display: block;
 		height: 177px;
-		position: absolute;
-		top: 200px;
 		width: 104px;
+		position: absolute;
+		bottom: 12px;
+		right: 30px;
+
 		@include retina-background-image('iphone', 104px, 177px);
+		@media only screen and (max-width: 700px) {
+			display: none;
+		}
 	}
 }
+
+/////////////////////////////////
+// Table
+/////////////////////////////////
 
 .rates {
 	h3 {
@@ -200,6 +220,13 @@ blockquote {
 		margin: 61px 0 0 15px;
 	}
 
+	@media only screen and (max-width: 540px) {
+		h3,
+		p.intro {
+			font-size: 24px;
+		}
+	}
+
 	table {	
 		border-collapse: collapse; 
 		border-spacing: 0;
@@ -211,6 +238,13 @@ blockquote {
 			font-size: 12px;
 			font-weight: 100;
 			text-align: right;
+
+			@media only screen and (max-width: 400px) {
+				font-size: 0.4em;
+				font-weight: 300;
+				line-height: 1.4;
+				width: 50%;
+			}
 		}
 
 		tr {
@@ -251,6 +285,7 @@ blockquote {
 			position: relative;
 			width: 77px;
 		}
+
 		li {
 			display: inline;
 			

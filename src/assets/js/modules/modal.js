@@ -2,7 +2,7 @@ $('.button').click(function() {
 	$('#modal').show();
 });
 
-$('#modal i, .modal-wrap').click(function() {
+$('#modal i, .background').click(function() {
 	$('#modal').hide();
 });
 
