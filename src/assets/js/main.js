@@ -30,10 +30,10 @@ var tableMaker = {
 
 
 $.ajax({
-	type: "GET",
+	type: 'GET',
 	url: url,
-	contentType: "application/json; charset=utf-8",
-	dataType: "jsonp",
+	contentType: 'application/json; charset=utf-8',
+	dataType: 'jsonp',
 	success: function (data, textStatus, jqXHR) {
 		tableMaker.init(data.records);
 	},

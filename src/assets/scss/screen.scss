@@ -156,7 +156,6 @@ header {
 	ul {
 		list-style-position: inside;
 		padding: 0;
-
 		li {
 			margin-bottom: 2px;
 		}
@@ -297,6 +296,32 @@ blockquote {
 
 			@include transition(background-color, 0.2s, linear);
 
+			&:first-child {
+				border-left: 0;
+				border-right: 0;
+				&.active {
+					border-right: 1px solid #ccc;
+				}
+				a {
+					border-left: 0;
+				}
+			}
+			&:last-child {
+				border-left: 0;
+				&.active {
+					border-left: 1px solid #ccc;
+				}
+			}
+			
+			a {
+				color: $blue;
+				cursor: pointer;
+				display: block;
+				font-size: 18px;
+				padding: 6px 16px;
+				text-decoration: none;
+			}
+
 			&:hover {
 				background-color: darken(#ddebe1, 5%);
 			}
@@ -312,22 +337,6 @@ blockquote {
 					color: #505050;
 					padding: 15px 16px 6px;
 				}
-			}
-
-
-			&:first-child {
-				border-left: 0;
-				a {
-					border-left: 0;
-				}
-			}
-			
-			a {
-				color: $blue; 
-				display: block;
-				font-size: 18px;
-				padding: 6px 16px;
-				text-decoration: none;
 			}
 			
 		}
