@@ -41,3 +41,8 @@ $.ajax({
 		console.log(errorMessage);
 	}
 });
+
+
+
+$('.side-bar').tabMenu();
+

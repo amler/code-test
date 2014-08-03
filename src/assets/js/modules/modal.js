@@ -1,4 +1,4 @@
-$('.button').click(function() {
+$('.grid-25 > .button').click(function() {
 	$('#modal').show();
 });
 
@@ -30,4 +30,3 @@ $('#modal form').submit(function(event) {
 		alert('Invalid username/password.');
 	}
 });
-
