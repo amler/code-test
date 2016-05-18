@@ -37,7 +37,7 @@ $.ajax({
 		console.log('good', data);
 	},
 	error: function (errorMessage) {
-		console.log(errorMessage);
+		console.log('bad',arguments);
 	}
 });
 
