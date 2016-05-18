@@ -31,7 +31,7 @@ $.ajax({
 	type: 'GET',
 	url: 'assets/js/rates.json',
 	contentType: 'application/json; charset=utf-8',
-	dataType: 'jsonp',
+	dataType: 'json',
 	success: function (data, textStatus, jqXHR) {
 		tableMaker.init(data.records);
 		console.log('good', data);
