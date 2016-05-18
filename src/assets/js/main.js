@@ -1,6 +1,4 @@
 
-var url = 'http://community.ally.com/svc/api/';
-
 var tableMaker = {
 	init: function(array) {
 		this.dataArray = array;
@@ -31,7 +29,7 @@ var tableMaker = {
 
 $.ajax({
 	type: 'GET',
-	url: url,
+	url: 'assets/js/rates.json',
 	contentType: 'application/json; charset=utf-8',
 	dataType: 'jsonp',
 	success: function (data, textStatus, jqXHR) {
