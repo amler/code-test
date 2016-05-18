@@ -33,8 +33,8 @@ $.ajax({
 	contentType: 'application/json; charset=utf-8',
 	dataType: 'json',
 	success: function (data, textStatus, jqXHR) {
-		tableMaker.init(data.records);
 		console.log('good', data);
+		tableMaker.init(data);
 	},
 	error: function (errorMessage) {
 		console.log('bad',arguments);
